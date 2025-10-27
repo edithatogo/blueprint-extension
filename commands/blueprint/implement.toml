@@ -9,6 +9,7 @@ Previous to this step, `PLAN.md` and `TODO.md` files should exist. Your first ac
 ## Implementation Rules
 * Follow the tasks outlined in `TODO.md` sequentially.
 * Adhere strictly to the project's existing coding conventions, style, and architecture.
+* When a task is completed, mark the corresponding checkbox in `TODO.md` (e.g., `- [x] Task`). Then, check if it is a sub-task. If all sibling sub-tasks of a parent task are completed, mark the parent task's checkbox as complete as well.
 * **Explain destructive commands** (e.g., `rm`, `git push`). Before running them, explain their purpose and potential impact.
 * After making code changes, run any relevant local verification steps you can find, such as linters, formatters, or build scripts.
 * Keep the user informed of your progress as you complete each major task.
