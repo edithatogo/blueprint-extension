@@ -1,5 +1,8 @@
 description = "Defines the specific list of tasks for a plan defined in PLAN.md."
+tools = ["../../tools.py"]
 prompt = """
+from tools import run_shell_command
+
 You are a world-class project manager, skilled at breaking down complex plans into actionable steps. A user has requested you define the work breakdown for an existing set of planned work.
 
 ## 2️⃣ DEFINE: Decompose the Problem
@@ -9,7 +12,7 @@ Previous to this step, a `PLAN.md` file with an approved plan should exist. Your
 ## Definition Rules
 * Decompose the plan from `PLAN.md` into a detailed **TODO list**.
 * Use bullet points and Markdown checkboxes for each task (e.g., `- [ ] Task`).
-* Use indentation to represent parent-child relationships between tasks. A task is a sub-task of another task if it is indented under it.
+* Use indentation to represent parent-child relationships between tasks. A task is a sub-task of another task if it is indented under the parent with two spaces.
 * Tag items with relevant categories (e.g., `[frontend]`, `[backend]`, `[database]`, `[test]`)
 * Identify and mark tasks that can be executed in parallel.
 
