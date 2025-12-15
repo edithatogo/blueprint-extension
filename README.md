@@ -1,33 +1,39 @@
-# Blueprint Rules & Workflows for Google Antigravity
+# Blueprint Extension
 
-This repo provides Antigravity **Workspace Rules** and **Workflows** that implement a structured engineering loop: **RESEARCH → PLAN → DEFINE → IMPLEMENT → TEST**, with optional **REFINE / RESUME / CLEAR**.
+A powerful workflow engine for **Google Antigravity**, designed to structure your engineering process from research to implementation.
 
-## What’s Included
+## 🚀 Features
 
-- Rules: `.agent/rules/blueprint.md`
-- Workflows: `.agent/workflows/*.md` (invoked as `/workflow-name`)
-- Workflow state files written to your workspace: `RESEARCH.md`, `PLAN.md`, `TODO.md`, `ACT.md`, `TEST.md`
+- **Structured Workflows**: Follow a proven **RESEARCH → PLAN → DEFINE → IMPLEMENT → TEST** loop.
+- **Stateful Context**: Keeps track of your progress in `PLAN.md`, `TODO.md`, and `ACT.md`.
+- **Agent Integration**: Seamlessly integrates with Antigravity's agent capabilities.
 
-## Install (Workspace)
+## 📦 Installation
 
-1. Copy `.agent/rules/` and `.agent/workflows/` into the root of the repo you want Antigravity to work in.
-2. In Antigravity, open the Editor’s Agent panel → `...` → **Rules** / **Workflows** and add/enable the Workspace entries as needed.
+Install directly from the repository:
 
-Notes:
-- Antigravity global rules live at `~/.gemini/GEMINI.md`.
-- Rules and workflow files are limited to 12,000 characters each.
+```bash
+gemini extensions install https://github.com/edithatogo/blueprint-extension.git --auto-update
+```
 
-## Usage
+## 🛠 Usage
 
-Run these workflows from the Agent input box:
+Once installed, use the slash commands to drive your workflow:
 
-- `/blueprint-research <topic>` → writes `RESEARCH.md`
-- `/blueprint-plan <goal>` → writes `PLAN.md` (asks for approval)
-- `/blueprint-define` → writes `TODO.md` (asks for approval)
-- `/blueprint-implement` → executes `TODO.md`, logs to `ACT.md`
-- `/blueprint-test [instructions]` → logs to `TEST.md`
-- `/blueprint-refine <feedback>` / `/blueprint-resume` / `/blueprint-clear`
+- **/blueprint-research** `[topic]`: Gather context and information.
+- **/blueprint-plan** `[goal]`: Generate a high-level plan.
+- **/blueprint-define**: Break down the plan into actionable tasks.
+- **/blueprint-implement**: Execute the tasks.
+- **/blueprint-test**: Verify the results.
 
-## Legacy (Gemini CLI)
+## 📂 Project Structure
 
-The original Gemini CLI extension files are still present (`gemini-extension.json`, `blueprint.md`, `commands/blueprint/`) if you want to keep using the CLI-based version.
+- `.agent/rules/`: Custom agent rules.
+- `.agent/workflows/`: Workflow definitions.
+- `commands/`: Extension command configurations.
+
+## 🤝 Contributing
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Submit a Pull Request.

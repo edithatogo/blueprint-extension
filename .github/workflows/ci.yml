@@ -1,0 +1,29 @@
+name: Extension CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  structure-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check Essential Files
+        run: |
+          if [ ! -f "gemini-extension.json" ]; then
+            echo "Error: gemini-extension.json is missing!"
+            exit 1
+          fi
+          if [ ! -f "blueprint.md" ]; then
+            echo "Error: blueprint.md is missing!"
+            exit 1
+          fi
+          if [ ! -d ".agent" ]; then
+             echo "Error: .agent directory is missing!"
+             exit 1
+          fi
+          echo "Structure check passed."
