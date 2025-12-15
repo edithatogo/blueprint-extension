@@ -1,88 +1,33 @@
-# Blueprint Extension for Gemini CLI
+# Blueprint Rules & Workflows for Google Antigravity
 
-This extension provides a collection of commands giving you a structured and robust workflow for tackling complex software engineering tasks directly within Gemini CLI.
+This repo provides Antigravity **Workspace Rules** and **Workflows** that implement a structured engineering loop: **RESEARCH → PLAN → DEFINE → IMPLEMENT → TEST**, with optional **REFINE / RESUME / CLEAR**.
 
-This workflow is designed to guide you from the initial research and planning stages all the way through implementation, following a PLAN ➡️  DEFINE ➡️  ACT loop.
+## What’s Included
 
-## ✨ Features
+- Rules: `.agent/rules/blueprint.md`
+- Workflows: `.agent/workflows/*.md` (invoked as `/workflow-name`)
+- Workflow state files written to your workspace: `RESEARCH.md`, `PLAN.md`, `TODO.md`, `ACT.md`, `TEST.md`
 
-The workflow is built around a few core ideas:
+## Install (Workspace)
 
-*   **Step-by-Step Process:** Each command corresponds to a specific phase of a development task. You move from one step to the next, with each command building on the output of the last.
-*   **Stateful Tracking:** The workflow uses a series of markdown files (e.g., `PLAN.md`, `TODO.md`, `ACT.md`) to track the state of your task. This allows you to pause and resume your work without losing context.
-*   **User Approval:** The workflow emphasizes safety and collaboration. For any significant action, such as creating a plan or fixing a bug, Gemini will present its proposed changes for your approval before proceeding.
+1. Copy `.agent/rules/` and `.agent/workflows/` into the root of the repo you want Antigravity to work in.
+2. In Antigravity, open the Editor’s Agent panel → `...` → **Rules** / **Workflows** and add/enable the Workspace entries as needed.
 
-## 🚀 Installation
+Notes:
+- Antigravity global rules live at `~/.gemini/GEMINI.md`.
+- Rules and workflow files are limited to 12,000 characters each.
 
-Use the `gemini extensions install` command to install directly from the source repository:
+## Usage
 
-```bash
-gemini extensions install https://github.com/gplasky/gemini-cli-blueprint-extension.git --auto-update
-```
+Run these workflows from the Agent input box:
 
-The `--auto-update` is optional: if specified, it will update to new versions as they are released.
+- `/blueprint-research <topic>` → writes `RESEARCH.md`
+- `/blueprint-plan <goal>` → writes `PLAN.md` (asks for approval)
+- `/blueprint-define` → writes `TODO.md` (asks for approval)
+- `/blueprint-implement` → executes `TODO.md`, logs to `ACT.md`
+- `/blueprint-test [instructions]` → logs to `TEST.md`
+- `/blueprint-refine <feedback>` / `/blueprint-resume` / `/blueprint-clear`
 
-You can manage the extension with the following commands:
+## Legacy (Gemini CLI)
 
-```bash
-# Update to the latest version
-gemini extensions update blueprint
-
-# Uninstall the extension
-gemini extensions uninstall blueprint
-```
-
-## 🛠️ Available Commands
-
-This extension provides the following commands.
-
-### Primary Commands
-
-*   **/blueprint:research**: Searches for information on a topic.
-*   **/blueprint:plan**: Creates a plan to accomplish your goal.
-*   **/blueprint:define**: For the given plan, defines the specific tasks to achieve the goal.
-*   **/blueprint:implement**: Implements a plan by executing defined tasks.
-*   **/blueprint:test**: Tests the plan's implementation to verify it meets the requirements.
-*   **/blueprint:refine**: Refines any part of the workflow based on user feedback or test failures.
-
-### Utility Commands
-
-*   **/blueprint:resume**: Resumes an interrupted workflow by automatically determining the last completed step.
-*   **/blueprint:clear**: Clears the workspace of all workflow-generated markdown files.
-
-
-## 💡 Usage
-
-The typical workflow follows this sequence:
-
-1.  **/blueprint:research**: Gather initial information and context.
-2.  **/blueprint:plan**: Create a high-level, step-by-step plan.
-3.  **/blueprint:define**: Break the plan down into a detailed `TODO.md` list.
-4.  **/blueprint:implement**: Execute the tasks in the `TODO.md` list.
-5.  **/blueprint:test**: Verify the implementation against the plan.
-
-**Optional:**
-
-*   **/blueprint:refine**: Iterate on any part of the workflow based on test results or your feedback.
-
-```mermaid
-stateDiagram-v2
-    [*] --> Idle
-    Idle --> Researching: /blueprint#58;research
-    Researching --> Planning: /blueprint#58;plan
-    Planning --> Defining: /blueprint#58;define
-    Defining --> Implementing: /blueprint#58;implement
-    Implementing --> Testing: /blueprint#58;test
-    Testing --> [*]: 'Success'
-    Testing --> Planning: /blueprint#58;refine
-```
-
-## ✅ Getting Started
-
-To start a new task, simply invoke the first command in the workflow that makes sense for your needs. For a brand new feature, you might start with `/blueprint:research` or, more commonly, `/blueprint:plan`.
-
-```
-/blueprint:plan add a new authentication endpoint
-```
-
-Gemini will then guide you through the subsequent steps. If you get interrupted, you can always come back and run `/blueprint:resume` to pick up right where you left off.
+The original Gemini CLI extension files are still present (`gemini-extension.json`, `blueprint.md`, `commands/blueprint/`) if you want to keep using the CLI-based version.
