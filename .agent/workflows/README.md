@@ -1,23 +1,45 @@
 # Antigravity Workflows: Blueprint
 
-These Markdown files are intended to be used as Antigravity Workflows (invoked via `/workflow-name`).
+These Markdown files are intended to be used as Antigravity Workflows (invoked via `/bp-<name>`).
 
-## Core Workflows
+## Full Workflow Sequence
 
-- `/blueprint-research`: Research a topic and write `RESEARCH.md`.
-- `/blueprint-plan`: Create an implementation plan in `PLAN.md`.
-- `/blueprint-define`: Turn `PLAN.md` into a task checklist in `TODO.md`.
-- `/blueprint-implement`: Execute `TODO.md` and log work in `ACT.md`.
-- `/blueprint-test`: Create/execute a test plan and log to `TEST.md`.
+```
+RESEARCH → REQUIREMENTS → DESIGN → PLAN → DEFINE → IMPLEMENT → TEST
+    ↑                                                          ↓
+    ←←←←←←←←←←←←←←←← REFINE / IMPROVE ←←←←←←←←←←←←←←←←←←←←←←←←←
+```
 
-## Iteration Workflows
+## Discovery & Planning
 
-- `/blueprint-refine`: Incorporate feedback or fix failures across prior steps.
-- `/blueprint-resume`: Detect current workflow state and recommend next steps.
+| Command | Description | Output |
+|---------|-------------|--------|
+| `/bp-research` | Research a topic | `RESEARCH.md` |
+| `/bp-requirements` | Gather formal requirements | `REQUIREMENTS.md` |
+| `/bp-design` | Document technical design | `DESIGN.md` |
+| `/bp-plan` | Create implementation plan | `PLAN.md` |
+| `/bp-define` | Break plan into tasks | `TODO.md` |
 
-## Utility Workflows
+## Execution
 
-- `/blueprint-commit`: Stage, commit, and push changes with a conventional commit message.
-- `/blueprint-review`: Run a self-review checklist before finalizing work.
-- `/blueprint-branch`: Isolate work in a new Git branch with optional task directory.
-- `/blueprint-clear`: Find and delete workflow-generated files (with confirmation).
+| Command | Description | Output |
+|---------|-------------|--------|
+| `/bp-implement` | Execute tasks with validation | `ACT.md` |
+| `/bp-test` | Run test plan | `TEST.md` |
+
+## Iteration
+
+| Command | Description |
+|---------|-------------|
+| `/bp-refine` | Fix failures or incorporate feedback |
+| `/bp-improve` | Proactively review and enhance artifacts |
+
+## Utilities
+
+| Command | Description |
+|---------|-------------|
+| `/bp-commit` | Commit with Conventional Commits |
+| `/bp-review` | Self-review checklist |
+| `/bp-branch` | Isolate work in a new branch |
+| `/bp-resume` | Detect state and recommend next step |
+| `/bp-clear` | Delete workflow files (with confirmation) |

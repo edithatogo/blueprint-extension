@@ -4,8 +4,10 @@ A powerful workflow engine for **Google Antigravity**, designed to structure you
 
 ## 🚀 Features
 
-- **Structured Workflows**: Follow a proven **RESEARCH → PLAN → DEFINE → IMPLEMENT → TEST** loop.
-- **Stateful Context**: Keeps track of your progress in `PLAN.md`, `TODO.md`, and `ACT.md`.
+- **Structured Workflows**: Follow a proven **RESEARCH → REQUIREMENTS → DESIGN → PLAN → DEFINE → IMPLEMENT → TEST** loop.
+- **Stateful Context**: Keeps track of your progress in `PLAN.md`, `TODO.md`, `ACT.md`, and more.
+- **Task Validation**: Ensures all tasks are completed before moving forward.
+- **Backup/Archive**: Automatically archives previous workflow files when starting new work.
 - **Agent Integration**: Seamlessly integrates with Antigravity's agent capabilities.
 
 ## 📦 Installation
@@ -20,17 +22,33 @@ gemini extensions install https://github.com/edithatogo/blueprint-extension.git 
 
 Once installed, use the slash commands to drive your workflow:
 
-- **/blueprint-research** `[topic]`: Gather context and information.
-- **/blueprint-plan** `[goal]`: Generate a high-level plan.
-- **/blueprint-define**: Break down the plan into actionable tasks.
-- **/blueprint-implement**: Execute the tasks.
-- **/blueprint-test**: Verify the results.
+### Discovery & Planning
+- **/bp-research** `[topic]`: Gather context and information → `RESEARCH.md`
+- **/bp-requirements** `[goal]`: Define user stories and acceptance criteria → `REQUIREMENTS.md`
+- **/bp-design** `[feature]`: Document technical decisions → `DESIGN.md`
+- **/bp-plan** `[goal]`: Generate a high-level plan → `PLAN.md`
+- **/bp-define**: Break down the plan into tasks → `TODO.md`
+
+### Execution
+- **/bp-implement**: Execute tasks with validation → `ACT.md`
+- **/bp-test**: Run test plan → `TEST.md`
+
+### Iteration
+- **/bp-refine** `[feedback]`: Fix failures or incorporate feedback
+- **/bp-improve**: Proactively review and enhance artifacts
+
+### Utilities
+- **/bp-commit**: Commit with Conventional Commits format
+- **/bp-review**: Self-review checklist before finalizing
+- **/bp-branch** `[name]`: Isolate work in a new Git branch
+- **/bp-resume**: Detect state and recommend next step
+- **/bp-clear**: Delete workflow files (with confirmation)
 
 ## 📂 Project Structure
 
-- `.agent/rules/`: Custom agent rules.
-- `.agent/workflows/`: Workflow definitions.
-- `commands/`: Extension command configurations.
+- `.agent/rules/`: Custom agent rules
+- `.agent/workflows/`: Workflow definitions
+- `commands/`: Extension command configurations
 
 ## 🤝 Contributing
 
