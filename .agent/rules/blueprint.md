@@ -1,6 +1,6 @@
 # Blueprint Rules (Antigravity)
 
-Use these rules for workspaces using the “Blueprint” workflows in `.agent/workflows/`.
+Use these rules for workspaces using the "Blueprint" workflows in `.agent/workflows/`.
 
 ## Safety & Approval
 
@@ -25,8 +25,31 @@ If creating one of these files and it already exists, stop and ask the user to c
 - Keep assumptions and open questions visible in `RESEARCH.md` / `PLAN.md`.
 - Keep `TODO.md` accurate as work progresses (check off completed items and roll up parent tasks).
 
+## Commit Conventions
+
+- Use Conventional Commits for all commits:
+  - `feat:` new features
+  - `fix:` bug fixes
+  - `docs:` documentation changes
+  - `chore:` maintenance tasks
+  - `refactor:` code restructuring
+  - `test:` test additions/changes
+- Keep commit messages concise but descriptive.
+- Use `/blueprint-commit` to ensure consistent formatting.
+
+## CI Awareness
+
+- Before marking a workflow as complete, verify that CI passes on the current branch.
+- If CI fails, use `/blueprint-refine` to address the issues before proceeding.
+- Check `.github/workflows/` for available CI configurations.
+
+## Conflict & Drift Handling
+
+- If `PLAN.md` and `TODO.md` become out of sync (e.g., after `/blueprint-refine` changes scope), update `PLAN.md` to reflect the actual direction.
+- If `ACT.md` shows significant deviation from `PLAN.md`, document the rationale and ask if the plan should be revised.
+- Use `/blueprint-review` to audit consistency before finalizing work.
+
 ## Repository Hygiene
 
 - Follow existing project conventions (style, structure, naming) and update relevant docs when behavior changes.
 - Keep changes focused on the requested scope; avoid drive-by refactors.
-
