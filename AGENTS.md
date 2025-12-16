@@ -68,6 +68,21 @@ The Investigator rule (`.agent/rules/investigator.md`) and associated workflows 
 
 The Peer Reviewer rule (`.agent/rules/peer-reviewer.md`) defines reviewer personas (Editor, Statistical, Domain, Methods). Journal profiles in `journal_profiles/` customize reviews for Nature, PLOS ONE, BMJ, etc.
 
+### Code Documentation
+- `/codewiki`: Generate comprehensive code documentation → `wiki/`
+- `/codewiki-update`: Incrementally update wiki with changes
+- `/apidocs`: Generate focused API reference → `docs/api/`
+
+The Code Wiki rule (`.agent/rules/codewiki.md`) defines documentation standards and templates.
+
+### Code Quality
+- `/codereview`: Simulate code review → `reports/code_review_*.md`
+- `/securityreview`: OWASP security review → `reports/security_review_*.md`
+- `/testplan`: Generate test plan → `reports/test_plan_*.md`
+
+### Quick Reference
+- `/help`: Display all workflows by category
+
 All investigation workflows are **read-only by default**. Reports include exploration traces for reproducibility.
 
 ## Security & Safety Notes

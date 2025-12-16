@@ -68,9 +68,9 @@ wiki/
 - External: [packages used]
 
 ## Usage Example
-```python
+\`\`\`python
 # from tests or docstrings
-```
+\`\`\`
 
 ## API Reference
 [link to detailed API page or inline]
@@ -86,9 +86,9 @@ wiki/
 **Inherits**: `ParentClass`
 
 ### Constructor
-```python
+\`\`\`python
 def __init__(self, param1: Type, param2: Type = default)
-```
+\`\`\`
 
 ### Methods
 
@@ -110,9 +110,9 @@ def __init__(self, param1: Type, param2: Type = default)
 **Module**: `path.to.module`
 
 ### Signature
-```python
+\`\`\`python
 def function_name(param1: Type, param2: Type = default) -> ReturnType
-```
+\`\`\`
 
 ### Parameters
 | Name | Type | Default | Description |
@@ -123,36 +123,162 @@ def function_name(param1: Type, param2: Type = default) -> ReturnType
 |------|-------------|
 
 ### Example
-```python
+\`\`\`python
 result = function_name(arg1, arg2)
-```
+\`\`\`
 ```
 
 ## Diagram Standards
 
-Use Mermaid for visual documentation:
+Use Mermaid for visual documentation. Generate diagrams automatically where possible.
 
 ### Module Dependency Graph
+Auto-generate from import analysis. Include in `architecture.md` and `dependencies.md`.
+
 ```mermaid
 graph TD
     A[module_a] --> B[module_b]
     A --> C[module_c]
     B --> D[shared_utils]
+    C --> D
+    
+    style A fill:#e1f5fe
+    style D fill:#fff3e0
 ```
 
 ### Class Hierarchy
+Auto-generate from class inheritance. Include in `api/classes.md`.
+
 ```mermaid
 classDiagram
-    Parent <|-- Child
-    Parent : +method()
-    Child : +override()
+    class BaseModel {
+        +id: int
+        +created_at: datetime
+        +save()
+        +delete()
+    }
+    class User {
+        +email: str
+        +password_hash: str
+        +authenticate()
+    }
+    BaseModel <|-- User
 ```
 
-### Data Flow
+### Sequence Diagrams
+Create for key API flows, authentication, and multi-step processes.
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant A as API
+    participant D as Database
+    
+    C->>A: POST /login
+    A->>D: Validate credentials
+    D-->>A: User record
+    A-->>C: JWT token
+```
+
+### Entity Relationship Diagrams
+Auto-generate from database models/schemas. Include in `data-models.md`.
+
+```mermaid
+erDiagram
+    USER ||--o{ ORDER : places
+    USER {
+        int id PK
+        string email
+    }
+    ORDER ||--|{ LINE_ITEM : contains
+    PRODUCT ||--o{ LINE_ITEM : "ordered in"
+```
+
+### State Diagrams
+Create for workflows, order status, user lifecycle, etc.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Pending: Submit
+    Pending --> Approved: Approve
+    Pending --> Rejected: Reject
+    Approved --> Published: Publish
+    Published --> [*]
+```
+
+### Component/Architecture Diagrams
+Create for high-level system overview. Include in `architecture.md`.
+
+```mermaid
+graph TB
+    subgraph Frontend
+        UI[React App]
+    end
+    
+    subgraph Backend
+        API[FastAPI]
+        Auth[Auth Service]
+    end
+    
+    subgraph Data
+        DB[(PostgreSQL)]
+        Cache[(Redis)]
+    end
+    
+    UI --> API
+    API --> Auth
+    API --> DB
+    API --> Cache
+```
+
+### Data Flow Diagrams
+Show how data moves through the system.
+
 ```mermaid
 flowchart LR
-    Input --> Process --> Output
+    A[Input] --> B{Validator}
+    B -->|Valid| C[Process]
+    B -->|Invalid| D[Error]
+    C --> E[(Database)]
+    C --> F[Response]
 ```
+
+### Git/Branching Diagrams
+Document branching strategy.
+
+```mermaid
+gitGraph
+    commit id: "init"
+    branch develop
+    commit id: "feature-base"
+    branch feature/auth
+    commit id: "add-login"
+    checkout develop
+    merge feature/auth
+    checkout main
+    merge develop tag: "v1.0.0"
+```
+
+## Auto-Generation Guidelines
+
+When generating wikis, automatically create these diagrams:
+
+| Diagram | Source | Location |
+|---------|--------|----------|
+| Module Dependencies | Import statements | `architecture.md`, `dependencies.md` |
+| Class Hierarchy | Class inheritance | `api/classes.md` |
+| ERD | ORM models, schema files | `data-models.md` |
+| Component Overview | Directory structure | `architecture.md` |
+| API Flows | Route definitions | `api/index.md` |
+
+### Diagram Detection Heuristics
+
+1. **Has ORM models?** → Generate ERD
+2. **Has multiple services/packages?** → Generate component diagram
+3. **Has API routes?** → Generate sequence diagram for key endpoints
+4. **Has state machines/enums?** → Generate state diagram
+5. **Has complex class hierarchies?** → Generate class diagram
 
 ## Incremental Updates
 

@@ -68,6 +68,19 @@ Explore and understand codebases or research projects without making changes. Re
 ### Peer Review Simulation
 - **/peerreview** `[journal=name]`: Simulate peer review by editor and experts → `reports/peer_review_*.md`
 
+### Code Documentation
+- **/codewiki**: Generate comprehensive code documentation → `wiki/`
+- **/codewiki-update**: Incrementally update wiki with changes
+- **/apidocs**: Generate focused API reference → `docs/api/`
+
+### Code Quality
+- **/codereview**: Simulate code review for files/PRs → `reports/code_review_*.md`
+- **/securityreview**: OWASP security review → `reports/security_review_*.md`
+- **/testplan**: Generate test plan → `reports/test_plan_*.md`
+
+### Quick Reference
+- **/help**: Display all available workflows
+
 ## 📂 Project Structure
 
 - `.agent/rules/`: Custom agent rules

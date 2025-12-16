@@ -23,6 +23,90 @@ Treat these files as the source of truth for the workflow state:
 2. Use a new task directory like `tasks/<short-name>/`
 3. Isolate work in a new VCS branch with `/bp-branch`
 
+## Design Document Standards
+
+When creating `DESIGN.md`, scale complexity to the feature:
+
+### Simple Features (< 1 day)
+Required sections:
+- Overview
+- Technical Approach
+- Key Decisions table
+- Components list
+
+### Medium Features (1-5 days)
+Add:
+- Architecture diagram (Mermaid)
+- Directory structure
+- API specification
+- Data models
+
+### Complex Features (> 5 days)
+Add:
+- System context diagram
+- Sequence diagrams for key flows
+- Entity Relationship Diagram
+- State diagrams (if stateful)
+- Migration plan
+- Testing strategy
+- Risk assessment
+
+### Diagram Requirements
+
+Always use Mermaid for diagrams:
+
+```mermaid
+graph TD
+    A[Component] --> B[Component]
+```
+
+Required diagram types by feature:
+| Feature Type | Required Diagrams |
+|--------------|-------------------|
+| New service | Component, Sequence, ERD |
+| API changes | Sequence, Data models |
+| UI changes | User flow, Component |
+| Database changes | ERD, Migration sequence |
+| Refactoring | Before/After architecture |
+
+## Requirements Document Standards
+
+When creating `REQUIREMENTS.md`, include:
+
+### Minimum (all features)
+- User stories in standard format
+- Acceptance criteria (testable)
+- Constraints and out of scope
+
+### Recommended (medium+)
+- User journey diagrams
+- Success metrics
+- Non-functional requirements
+
+### Complex features
+- Use case diagrams
+- Stakeholder matrix
+- Dependency tracking
+
+## Plan Document Standards
+
+When creating `PLAN.md`, include:
+
+### Minimum
+- Ordered task list
+- Dependencies noted
+- Success criteria
+
+### Recommended
+- Task dependency graph (Mermaid)
+- Estimated timeline
+- Risk assessment
+
+### Complex
+- Gantt chart
+- Rollback plan
+- Definition of Done
+
 ## Task Validation
 
 - When running `/bp-implement`, all `[ ]` items in `TODO.md` must be resolved before proceeding to `/bp-test`.

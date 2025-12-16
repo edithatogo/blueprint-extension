@@ -87,3 +87,34 @@ Simulate academic peer review with multiple reviewer personas.
 | `/peerreview` | Simulate peer review by editor and expert reviewers | `reports/peer_review_*.md` |
 
 **Journal Profiles**: `journal_profiles/` contains templates for Nature, PLOS ONE, BMJ, and Nature Human Behaviour.
+
+## Code Documentation
+
+Generate and maintain codebase documentation.
+
+| Command | Description | Output |
+|---------|-------------|--------|
+| `/codewiki` | Generate comprehensive code documentation wiki | `wiki/` |
+| `/codewiki-update` | Incrementally update wiki with recent changes | `wiki/` + report |
+| `/apidocs` | Generate focused API reference only | `docs/api/` |
+
+## Code Quality
+
+Review code for issues and generate test plans.
+
+| Command | Description | Output |
+|---------|-------------|--------|
+| `/codereview` | Simulate code review for files/PRs | `reports/code_review_*.md` |
+| `/securityreview` | OWASP-aligned security review | `reports/security_review_*.md` |
+| `/testplan` | Generate test plan from requirements/code | `reports/test_plan_*.md` |
+
+## Quick Reference
+
+| Command | Description |
+|---------|-------------|
+| `/help` | Display all workflows by category |
+
+---
+
+**Tip**: Use `/help` for a quick in-chat reference of all commands.
+
