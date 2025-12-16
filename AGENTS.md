@@ -42,15 +42,28 @@ There are no automated tests in this repo. Prefer a quick manual smoke test in a
 
 The Investigator rule (`.agent/rules/investigator.md`) and associated workflows provide evidence-based exploration:
 
-- **Rule**: `investigator.md` enforces evidence-first investigation with mandatory citations (file + artifact + location) and domain-specific report templates.
-- **Workflows**:
-  - `/investigatecode [question]`: Deep codebase exploration → `reports/codebase_investigation_*.md`
-  - `/investigateresearch [question]`: Deep research project exploration (protocol, manuscript, artifacts) → `reports/research_investigation_*.md`
-  - `/map`: Quick architecture map → `reports/codebase_map_*.md`
-  - `/trace [symbol]`: Call chain analysis → `reports/trace_*.md`
-  - `/hotspots`: Complexity/risk identification → `reports/hotspots_*.md`
+- **Rule**: `investigator.md` enforces evidence-first investigation with mandatory citations and domain-specific report templates.
 
-Investigation workflows are **read-only by default**—they do not modify files unless explicitly requested. All reports include an exploration trace for reproducibility.
+### Core Investigation
+- `/investigatecode [question]`: Deep codebase exploration → `reports/codebase_investigation_*.md`
+- `/investigateresearch [question]`: Deep research project exploration → `reports/research_investigation_*.md`
+- `/map`: Quick architecture map → `reports/codebase_map_*.md`
+- `/trace [symbol]`: Call chain analysis → `reports/trace_*.md`
+- `/hotspots`: Complexity/risk identification → `reports/hotspots_*.md`
+
+### Codebase Utilities
+- `/diff`: Compare files or versions → `reports/diff_*.md`
+- `/summarize`: Summarize file or directory → `reports/summary_*.md`
+- `/audit`: Security and compliance audit → `reports/audit_*.md`
+- `/changelog`: Generate changelog from git → `reports/changelog_*.md`
+- `/dependency-graph`: Visualize dependencies → `reports/dependency_graph_*.md`
+
+### Research Utilities
+- `/validateclaims`: Validate manuscript claims → `reports/claim_validation_*.md`
+- `/checkfigures`: Verify figure reproducibility → `reports/figure_check_*.md`
+- `/citationaudit`: Audit citations → `reports/citation_audit_*.md`
+
+All investigation workflows are **read-only by default**. Reports include exploration traces for reproducibility.
 
 ## Security & Safety Notes
 

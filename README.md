@@ -48,10 +48,22 @@ Once installed, use the slash commands to drive your workflow:
 Explore and understand codebases or research projects without making changes. Reports are written to `reports/`.
 
 - **/investigatecode** `[question]`: Deep codebase exploration → `reports/codebase_investigation_*.md`
-- **/investigateresearch** `[question]`: Deep research project exploration (protocol, manuscript, artifacts) → `reports/research_investigation_*.md`
+- **/investigateresearch** `[question]`: Deep research project exploration → `reports/research_investigation_*.md`
 - **/map**: Create repository architecture map → `reports/codebase_map_*.md`
 - **/trace** `[symbol]`: Trace call paths for a function/class → `reports/trace_*.md`
 - **/hotspots**: Identify complexity/risk hotspots → `reports/hotspots_*.md`
+
+### Codebase Utilities
+- **/diff** `[target1] [target2]`: Compare files or versions → `reports/diff_*.md`
+- **/summarize** `[path]`: Summarize a file or directory → `reports/summary_*.md`
+- **/audit**: Security and compliance audit → `reports/audit_*.md`
+- **/changelog**: Generate changelog from git history → `reports/changelog_*.md`
+- **/dependency-graph**: Visualize module dependencies → `reports/dependency_graph_*.md`
+
+### Research Utilities
+- **/validateclaims**: Validate manuscript claims against data → `reports/claim_validation_*.md`
+- **/checkfigures**: Verify figure reproducibility → `reports/figure_check_*.md`
+- **/citationaudit**: Audit citations for completeness → `reports/citation_audit_*.md`
 
 ## 📂 Project Structure
 

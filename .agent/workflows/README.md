@@ -56,3 +56,24 @@ Explore and understand codebases or research projects without making changes.
 | `/trace` | Trace call paths for a symbol | `reports/trace_*.md` |
 | `/hotspots` | Identify complexity/risk hotspots | `reports/hotspots_*.md` |
 
+## Codebase Utilities
+
+Additional tools for codebase analysis and maintenance.
+
+| Command | Description | Output |
+|---------|-------------|--------|
+| `/diff` | Compare files or versions | `reports/diff_*.md` |
+| `/summarize` | Summarize a file or directory | `reports/summary_*.md` |
+| `/audit` | Security and compliance audit | `reports/audit_*.md` |
+| `/changelog` | Generate changelog from git history | `reports/changelog_*.md` |
+| `/dependency-graph` | Visualize module dependencies | `reports/dependency_graph_*.md` |
+
+## Research Utilities
+
+Tools for academic research project validation.
+
+| Command | Description | Output |
+|---------|-------------|--------|
+| `/validateclaims` | Validate manuscript claims against source data | `reports/claim_validation_*.md` |
+| `/checkfigures` | Verify figure reproducibility and provenance | `reports/figure_check_*.md` |
+| `/citationaudit` | Audit citations for completeness and consistency | `reports/citation_audit_*.md` |
