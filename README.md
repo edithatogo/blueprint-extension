@@ -44,6 +44,15 @@ Once installed, use the slash commands to drive your workflow:
 - **/bp-resume**: Detect state and recommend next step
 - **/bp-clear**: Delete workflow files (with confirmation)
 
+### Investigation
+Explore and understand codebases or research projects without making changes. Reports are written to `reports/`.
+
+- **/investigatecode** `[question]`: Deep codebase exploration → `reports/codebase_investigation_*.md`
+- **/investigateresearch** `[question]`: Deep research project exploration (protocol, manuscript, artifacts) → `reports/research_investigation_*.md`
+- **/map**: Create repository architecture map → `reports/codebase_map_*.md`
+- **/trace** `[symbol]`: Trace call paths for a function/class → `reports/trace_*.md`
+- **/hotspots**: Identify complexity/risk hotspots → `reports/hotspots_*.md`
+
 ## 📂 Project Structure
 
 - `.agent/rules/`: Custom agent rules

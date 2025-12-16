@@ -38,6 +38,20 @@ There are no automated tests in this repo. Prefer a quick manual smoke test in a
 - PRs should explain user-visible workflow changes, link relevant issues, and update `README.md` when commands or file conventions change.
 - Bump `gemini-extension.json` `version` when making a release-worthy change.
 
+## Investigation Workflows
+
+The Investigator rule (`.agent/rules/investigator.md`) and associated workflows provide evidence-based exploration:
+
+- **Rule**: `investigator.md` enforces evidence-first investigation with mandatory citations (file + artifact + location) and domain-specific report templates.
+- **Workflows**:
+  - `/investigatecode [question]`: Deep codebase exploration → `reports/codebase_investigation_*.md`
+  - `/investigateresearch [question]`: Deep research project exploration (protocol, manuscript, artifacts) → `reports/research_investigation_*.md`
+  - `/map`: Quick architecture map → `reports/codebase_map_*.md`
+  - `/trace [symbol]`: Call chain analysis → `reports/trace_*.md`
+  - `/hotspots`: Complexity/risk identification → `reports/hotspots_*.md`
+
+Investigation workflows are **read-only by default**—they do not modify files unless explicitly requested. All reports include an exploration trace for reproducibility.
+
 ## Security & Safety Notes
 
 Rules and workflows should preserve a safety posture: require explicit confirmation before destructive actions and maintain “plan before acting”.

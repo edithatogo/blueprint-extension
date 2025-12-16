@@ -43,3 +43,16 @@ RESEARCH → REQUIREMENTS → DESIGN → PLAN → DEFINE → IMPLEMENT → TEST
 | `/bp-branch` | Isolate work in a new branch |
 | `/bp-resume` | Detect state and recommend next step |
 | `/bp-clear` | Delete workflow files (with confirmation) |
+
+## Investigation
+
+Explore and understand codebases or research projects without making changes.
+
+| Command | Description | Output |
+|---------|-------------|--------|
+| `/investigatecode` | Deep codebase exploration for ambiguous questions | `reports/codebase_investigation_*.md` |
+| `/investigateresearch` | Deep research project exploration (protocol, manuscript, artifacts) | `reports/research_investigation_*.md` |
+| `/map` | Create repository architecture map | `reports/codebase_map_*.md` |
+| `/trace` | Trace call paths for a symbol | `reports/trace_*.md` |
+| `/hotspots` | Identify complexity/risk hotspots | `reports/hotspots_*.md` |
+
