@@ -65,6 +65,9 @@ Explore and understand codebases or research projects without making changes. Re
 - **/checkfigures**: Verify figure reproducibility → `reports/figure_check_*.md`
 - **/citationaudit**: Audit citations for completeness → `reports/citation_audit_*.md`
 
+### Peer Review Simulation
+- **/peerreview** `[journal=name]`: Simulate peer review by editor and experts → `reports/peer_review_*.md`
+
 ## 📂 Project Structure
 
 - `.agent/rules/`: Custom agent rules

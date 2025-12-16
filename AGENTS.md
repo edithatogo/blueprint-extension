@@ -63,6 +63,11 @@ The Investigator rule (`.agent/rules/investigator.md`) and associated workflows 
 - `/checkfigures`: Verify figure reproducibility → `reports/figure_check_*.md`
 - `/citationaudit`: Audit citations → `reports/citation_audit_*.md`
 
+### Peer Review Simulation
+- `/peerreview`: Simulate peer review by editor and experts → `reports/peer_review_*.md`
+
+The Peer Reviewer rule (`.agent/rules/peer-reviewer.md`) defines reviewer personas (Editor, Statistical, Domain, Methods). Journal profiles in `journal_profiles/` customize reviews for Nature, PLOS ONE, BMJ, etc.
+
 All investigation workflows are **read-only by default**. Reports include exploration traces for reproducibility.
 
 ## Security & Safety Notes

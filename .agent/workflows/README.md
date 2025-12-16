@@ -77,3 +77,13 @@ Tools for academic research project validation.
 | `/validateclaims` | Validate manuscript claims against source data | `reports/claim_validation_*.md` |
 | `/checkfigures` | Verify figure reproducibility and provenance | `reports/figure_check_*.md` |
 | `/citationaudit` | Audit citations for completeness and consistency | `reports/citation_audit_*.md` |
+
+## Peer Review Simulation
+
+Simulate academic peer review with multiple reviewer personas.
+
+| Command | Description | Output |
+|---------|-------------|--------|
+| `/peerreview` | Simulate peer review by editor and expert reviewers | `reports/peer_review_*.md` |
+
+**Journal Profiles**: `journal_profiles/` contains templates for Nature, PLOS ONE, BMJ, and Nature Human Behaviour.
