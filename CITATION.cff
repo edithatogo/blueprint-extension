@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: If you use this fork, please cite it using these metadata and identify the
+  commit or release used. Upstream attribution is recorded in references.
+title: Blueprint Extension
+authors:
+- name: Blueprint Extension project
+repository-code: https://github.com/edithatogo/blueprint-extension
+url: https://github.com/edithatogo/blueprint-extension
+references:
+- type: software
+  title: Blueprint Extension
+  authors:
+  - name: Blueprint Extension project
+  repository-code: https://github.com/gplasky/gemini-cli-blueprint-extension
+  url: https://github.com/gplasky/gemini-cli-blueprint-extension
